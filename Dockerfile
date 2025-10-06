@@ -1,23 +1,28 @@
-# Imagen base ligera con Python 3.11
+# ---------------- Imagen base ----------------
 FROM python:3.11-slim
 
-# Directorio de trabajo
+# Carpeta de trabajo dentro del contenedor
 WORKDIR /app
 
-# Dependencias del sistema para GDAL / Rasterio
-RUN apt-get update && apt-get install -y \
-        gdal-bin libgdal-dev \
-    && rm -rf /var/lib/apt/lists/*
+# ---------------- Dependencias OS ----------------
+# gdal-bin + libgdal-dev   → Rasterio funciona
+# git-lfs                   → descargar los .tif de Git LFS
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        gdal-bin libgdal-dev git-lfs ca-certificates curl && \
+    rm -rf /var/lib/apt/lists/* && \
+    git lfs install --system
 
-# Copiar código y requisitos
-COPY api/ api/
-COPY requirements.txt .
+# ---------------- Copiar código ----------------
+COPY . .
 
-# Instalar dependencias Python
+# ---------- Descargar objetos LFS reales -------
+RUN git lfs pull
+
+# ----------- Instalar dependencias Python -------
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Puerto expuesto
+# -------------- Puerto de exposición ------------
 EXPOSE 8000
 
-# Comando de arranque
+# ---------------- Comando final -----------------
 CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
