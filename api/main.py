@@ -1,6 +1,7 @@
 # api/main.py
 import os, numpy as np, rasterio
 from fastapi import FastAPI, Query, HTTPException
+from fastapi.middleware.cors import CORSMiddleware     # 👈 NUEVO
 from pydantic import BaseModel, Field
 from typing import Dict, List, Any
 
@@ -47,6 +48,15 @@ def label(p):
 
 # ── FastAPI ──────────────────────────────────────────────
 app = FastAPI(title="AAHH Predictor Lima", version="0.1")
+
+# ── CORS middleware ── abre la API a cualquier origen ────
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],     # cualquier dominio
+    allow_methods=["*"],
+    allow_headers=["*"],
+    allow_credentials=False
+)
 
 class OnePred(BaseModel):
     lat: float
