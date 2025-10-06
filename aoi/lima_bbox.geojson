@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "name": "AOI_Lima_BBox",
+  "crs": { "type": "name", "properties": { "name": "EPSG:4326" } },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Lima_AOI_BBox" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-77.25, -12.45],
+          [-76.75, -12.45],
+          [-76.75, -11.75],
+          [-77.25, -11.75],
+          [-77.25, -12.45]
+        ]]
+      }
+    }
+  ]
+}

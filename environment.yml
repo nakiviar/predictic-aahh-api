@@ -1,0 +1,17 @@
+name: aahh-api
+channels:
+  - conda-forge
+dependencies:
+  # ─ Python ─
+  - python=3.11
+
+  # ─ Librerías clave ─
+  - fastapi=0.110
+  - uvicorn=0.29          # servidor ASGI
+  - rasterio=1.3.9        # lectura GeoTIFF (incluye GDAL)
+  - numpy
+
+  # ─ Pip extras ─
+  - pip
+  - pip:
+      - "uvicorn[standard]"   # uvloop, httptools, etc. (mejora de rendimiento)

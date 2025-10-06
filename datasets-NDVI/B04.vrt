@@ -1,0 +1,33 @@
+<VRTDataset rasterXSize="1848" rasterYSize="2585">
+  <SRS dataAxisToSRSAxisMapping="2,1">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</SRS>
+  <GeoTransform> -7.7250260315444621e+01,  2.7085491802658623e-04,  0.0000000000000000e+00, -1.1749889448255715e+01,  0.0000000000000000e+00, -2.7085491802658623e-04</GeoTransform>
+  <VRTRasterBand dataType="Int16" band="1">
+    <Metadata>
+      <MDI key="STATISTICS_APPROXIMATE">YES</MDI>
+      <MDI key="STATISTICS_MINIMUM">-371</MDI>
+      <MDI key="STATISTICS_MAXIMUM">3834</MDI>
+      <MDI key="STATISTICS_MEAN">1015.3881026642</MDI>
+      <MDI key="STATISTICS_STDDEV">827.61049571783</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">97.89</MDI>
+    </Metadata>
+    <NoDataValue>-9999</NoDataValue>
+    <Scale>0.0001</Scale>
+    <ColorInterp>Gray</ColorInterp>
+    <ComplexSource resampling="nearest">
+      <SourceFilename relativeToVRT="0">C:/Users/nakid/Downloads/HLSS30.020_B04_doy2025014_aid0001_18S.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="1845" RasterYSize="2582" DataType="Int16" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="1845" ySize="2581.97588451111" />
+      <DstRect xOff="0.34277838670198" yOff="0" xSize="1847.16093926767" ySize="2585" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+    <ComplexSource resampling="nearest">
+      <SourceFilename relativeToVRT="0">C:/Users/nakid/Downloads/HLSS30.020_B04_doy2025014_aid0001_17S.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="84" RasterYSize="2585" DataType="Int16" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="84" ySize="2584.74986366828" />
+      <DstRect xOff="0" yOff="0.250136331716669" xSize="84" ySize="2584.74986366828" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+</VRTDataset>
