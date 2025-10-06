@@ -12,9 +12,9 @@ COPY requirements.txt .
 
 # 3) Descargar GeoTIFF REALES desde un hosting público
 #    — reemplaza las URLs por las tuyas —
-RUN curl -L -o api/ndvi.tif        https://drive.google.com/uc?export=download&id=1rP8mHDvvcSuz8kWEr4OkQ1Ap7AxlPIjb \
- && curl -L -o api/ntl_norm.tif    https://drive.google.com/uc?export=download&id=1mZzexsB_6c4YUmi_UlCXc8uZr_uIQ_Fa \
- && curl -L -o api/slope_lima.tif  https://drive.google.com/uc?export=download&id=1ZNVvL28qsnegxkgoo6ysVm--RQDoURQ7
+RUN curl -L -o api/ndvi.tif        https://github.com/nakiviar/predictic-aahh-api/releases/download/v1/ndvi.tif \
+ && curl -L -o api/ntl_norm.tif    https://github.com/nakiviar/predictic-aahh-api/releases/download/v1/ntl_norm.tif \
+ && curl -L -o api/slope_lima.tif  https://github.com/nakiviar/predictic-aahh-api/releases/download/v1/slope_lima.tif
 
 # 4) Instalar dependencias Python
 RUN pip install --no-cache-dir -r requirements.txt
